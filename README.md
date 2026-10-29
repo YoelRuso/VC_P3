@@ -26,7 +26,7 @@ pip install opencv-python numpy matplotlib scikit-learn seaborn
 Se abre `VC_P3.ipynb` y se ejecutan las celdas en orden. Notas:
 
 - **Calibración de la imagen ideal (1.2)**: se abre una ventana de OpenCV y hay que hacer clic sobre la moneda de 1 €. Para ejecutarla sin interacción, basta con poner `PUNTO_REF = (134, 347)`.
-- **Demostrador en vivo (1.3)**: `FUENTE` apunta a la cámara del móvil a través de DroidCam por WiFi (`http://<ip>:4747/video`). Para usar la webcam del portátil hay que poner `FUENTE = 0`.
+- **Demostrador en vivo (1.3)**: se lee la cámara del móvil directamente de la app DroidCam, que debe estar abierta, con el cliente DroidCam del PC **cerrado** (si no, la app responde «DroidCam is Busy»). Si el móvil está conectado por cable con la depuración USB activada, la celda ejecuta `adb forward tcp:4747 tcp:4747` y lee `http://127.0.0.1:4747/video`; si no, usa la WiFi con la IP de `IP_WIFI`, que es la que muestra la app. Para la webcam del portátil, `FUENTE = 0`.
 
 ---
 
